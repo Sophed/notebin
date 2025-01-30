@@ -4,6 +4,8 @@ import (
 	"log"
 	"notebin/cmd/internal/views"
 	"notebin/config"
+	"notebin/storage"
+	"notebin/storage/mongodb"
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
@@ -15,6 +17,16 @@ func main() {
 	if err != nil {
 		lg.Fatl(err)
 	}
+	storage.METHOD = &mongodb.StorageMongo{
+		URI:       config.Get().Mongo.URI,
+		CollUsers: config.Get().Mongo.CollUsers,
+		CollNotes: config.Get().Mongo.CollNotes,
+	}
+	err = storage.METHOD.Test()
+	if err != nil {
+		lg.Fatl(err)
+	}
+
 	app := fiber.New(fiber.Config{
 		DisableStartupMessage: true,
 	})

@@ -7,8 +7,16 @@ import (
 )
 
 type config struct {
-	Port      int    `kdl:"port"`
-	StaticDir string `kdl:"static-dir"`
+	Port      int         `kdl:"port"`
+	StaticDir string      `kdl:"static-dir"`
+	Mongo     mongoConfig `kdl:"mongo"`
+}
+
+type mongoConfig struct {
+	URI       string `kdl:"uri"`
+	Database  string `kdl:"database"`
+	CollUsers string `kdl:"coll-users"`
+	CollNotes string `kdl:"coll-notes"`
 }
 
 var cfg config

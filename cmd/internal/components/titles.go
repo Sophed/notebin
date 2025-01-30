@@ -7,7 +7,7 @@ import (
 
 func Titles() Node {
 	return Div(Class("titles"),
-		H2(Style("float: left"), Raw("Notebin")),
-		H2(Style("float: right"), Raw("⸜( ´ ꒳ ` )⸝")),
+		H2(Style("float: left"), Text("Notebin")),
+		H2(Style("float: right"), Text("⸜( ´ ꒳ ` )⸝")),
 	)
 }

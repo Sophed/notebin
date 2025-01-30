@@ -1,2 +1,8 @@
 port 1337
 static-dir "./static"
+mongo {
+    uri "mongodb://127.0.0.1:27017/"
+    database "notebin"
+    coll-users "users"
+    coll-notes "notes"
+}
