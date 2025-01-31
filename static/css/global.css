@@ -34,11 +34,36 @@ input {
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    box-sizing: border-box;   
+    box-sizing: border-box;
+    border: none;
+    background-color: var(--bg0);
+    color: var(--bg1);
+    transition: 0.2s;
+    padding: 0.8em 1.2em;
+}
+input:focus {
+    outline: none;
+    color: var(--bg2);
+}
+input:hover {
+    background-color: var(--bg05);
 }
 
 button {
     font-family: "IBM Plex Sans", serif;
     font-style: normal;
     font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: var(--bg0);
+    color: var(--bg2);
+    border: none;
+    padding: 0.8em 1.2em;
+}
+button:active {
+    background-color: var(--bg2);
+}
+button:hover {
+    background-color: var(--bg1);
+    color: var(--fg);
 }
