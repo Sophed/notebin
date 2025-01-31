@@ -6,5 +6,8 @@ import (
 )
 
 func Account() Node {
-	return P(Text("waow account pagee.,.,...."))
+	return Div(
+		P(Text("waow account pagee.,.,....")),
+		Button(Text("Log out"), Attr("onclick", "logOut()")),
+	)
 }

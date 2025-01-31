@@ -23,12 +23,22 @@ func (s *StorageMongo) RemoveUser(u *data.User) error {
 	return err
 }
 
-func (s *StorageMongo) FindUser(id string) (*data.User, error) {
+func (s *StorageMongo) FindUserByID(id string) (*data.User, error) {
 	coll := client.Database(config.Get().Mongo.Database).Collection(config.Get().Mongo.CollUsers)
 	var result data.User
 	err := coll.FindOne(context.TODO(), bson.D{{
 		Key:   "_id",
 		Value: id,
+	}}).Decode(&result)
+	return &result, err
+}
+
+func (s *StorageMongo) FindUserByUsername(username string) (*data.User, error) {
+	coll := client.Database(config.Get().Mongo.Database).Collection(config.Get().Mongo.CollUsers)
+	var result data.User
+	err := coll.FindOne(context.TODO(), bson.D{{
+		Key:   "username",
+		Value: username,
 	}}).Decode(&result)
 	return &result, err
 }

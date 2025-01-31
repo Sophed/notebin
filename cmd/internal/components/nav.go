@@ -6,6 +6,8 @@ import (
 	. "maragu.dev/gomponents/html"
 )
 
+const HX_TOKEN = "js:{token: getToken()}"
+
 func NavBar() Node {
 	return Div(
 		Ul(Class("nav"),
@@ -17,6 +19,6 @@ func NavBar() Node {
 
 func navItem(title, page, align string) Node {
 	return Li(Class(align),
-		A(Text(title), hx.Get(page), hx.Target("."+contentArea), hx.Swap("innerHTML")),
+		A(Text(title), hx.Get(page), hx.Target("."+contentArea), hx.Swap("innerHTML"), hx.Headers(HX_TOKEN)),
 	)
 }

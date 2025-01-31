@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"notebin/cmd/internal/api"
 	"notebin/cmd/internal/views"
 	"notebin/config"
 	"notebin/storage"
@@ -35,6 +36,9 @@ func main() {
 	app.Get("/account", views.ViewAccount)
 	app.Get("/login", views.ViewLogin)
 	app.Get("/register", views.ViewRegister)
+
+	app.Post("/api/login", api.Login)
+	app.Post("/api/register", api.Register)
 
 	app.Static("/static", config.Get().StaticDir)
 
