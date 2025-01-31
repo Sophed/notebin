@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
+    --bg0: #070C0A;
+    --bg05: #0D1311;
     --bg: #09100d;
+    --bg1: #252C29;
+    --bg2: #565D5A;
     --fg: #e8f0ec;
     --accent: #6ebf97;
     --primary: #9ccab3;
@@ -20,4 +24,21 @@ body {
     max-width: 80ch;
     margin-left: auto;
     margin-right: auto;
+}
+
+input {
+    font-family: "IBM Plex Sans", serif;
+    font-style: normal;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;   
+}
+
+button {
+    font-family: "IBM Plex Sans", serif;
+    font-style: normal;
+    font-size: 16px;
 }

@@ -19,7 +19,9 @@ func View(title string, elements ...Node) Node {
 		Head: []Node{
 			Link(Rel("icon"), Type("image/x-icon"), Href("/static/favicon.png")),
 			Link(Rel("stylesheet"), Href(config.Get().StaticDir+"/css/global.css")),
+			Link(Rel("stylesheet"), Href(config.Get().StaticDir+"/css/form.css")),
 			Link(Rel("stylesheet"), Href(config.Get().StaticDir+"/css/nav.css")),
+			Script(Src(config.Get().StaticDir+"/js/auth.js"), Defer()),
 			Script(Src(config.Get().StaticDir+"/htmx.min.js"), Defer()),
 		},
 		Body: []Node{

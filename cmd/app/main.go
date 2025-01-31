@@ -33,6 +33,8 @@ func main() {
 
 	app.Get("/", views.ViewApp)
 	app.Get("/account", views.ViewAccount)
+	app.Get("/login", views.ViewLogin)
+	app.Get("/register", views.ViewRegister)
 
 	app.Static("/static", config.Get().StaticDir)
 

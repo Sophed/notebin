@@ -1,0 +1,43 @@
+.account-form {
+    margin: 1em 0;
+    width: 100%;
+}
+
+.account-form input {
+    border: none;
+    background-color: var(--bg0);
+    color: var(--bg1);
+    transition: 0.2s;
+    padding: 0.8em 1.2em;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+.account-form input:focus {
+    outline: none;
+    color: var(--bg2);
+}
+.account-form input:hover {
+    background-color: var(--bg05);
+}
+
+.account-form .form-actions {
+    width: 100%;
+}
+
+.account-form button {
+    background-color: var(--bg0);
+    color: var(--bg2);
+    border: none;
+    padding: 0.8em 1.2em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.account-form button:hover {
+    background-color: var(--bg1);
+    color: var(--fg);
+}
+.account-form button:active {
+    background-color: var(--bg2);
+}

@@ -6,7 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func ViewAccount(c *fiber.Ctx) error {
+func ViewLogin(c *fiber.Ctx) error {
 	c.Set(fiber.HeaderContentType, fiber.MIMETextHTML)
 	if isHx(c) {
 		return c.SendString(components.Render(components.Login()))
